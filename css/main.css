@@ -87,9 +87,15 @@ body.before-load {
 }
 .scroll-section {
 	position: relative;
-	padding-top: 40vw;
-	padding-bottom: 25vh;
+	padding: 10vh 0;
 }
+
+/* 인터렉티브 적용 전 임시 padding */
+#scroll-section-0 {
+	padding-top: 40vw;
+	padding-bottom: 60vw;
+}
+
 #scroll-section-0 h1 {
 	position: relative;
 	top: 10vh;
@@ -105,17 +111,24 @@ body.before-load {
 	height: 100%;
 }
 
-.mobile-img {
+.mobile-img, .bc-img {
 	display: block;
 	margin: 0 auto;
 	width: 650px;
 }
-#scroll-section-1 h3 {
-	font-size: 1.5rem;
-	text-align: center;
-	transform: translateY(-2vh);
+.bc-img{
+	padding-bottom: 60px;
 }
-#scroll-section-1 h1 {
+#scroll-section-1 h3, 
+#scroll-section-2 h3,
+#scroll-section-3 h3 {
+	font-size: 1.3rem;
+	text-align: center;
+	transform: translateY(-1.5vh);
+}
+#scroll-section-1 h1, 
+#scroll-section-2 h1,
+#scroll-section-3 h1 {
 	font-size: 2.8rem;
 	text-align: center;
 	/* padding-top: 2vh; */
@@ -126,7 +139,7 @@ body.before-load {
 	margin: 0 auto;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: flex-end;
+	justify-content: center;
 }
 .description {
 	max-width: 600px;
@@ -153,10 +166,10 @@ body.before-load {
 }
 .chapel-btn{
 	/* border: none; default.css에 이미 있음 */
-	padding: 14px 12px;
-	margin: 10px 5px;
+	padding: 14px 18px;
+	margin: 10px 9px;
 	border-radius: 10px;
-	background-color: lightgray;
+	background-color: rgb(228, 228, 228);
 	color: rgb(230, 31, 58);
 	font-size: 0.9rem;
 	font-weight: bold;
@@ -189,18 +202,20 @@ body.before-load {
 	grid-column: 1 / 3;
 	grid-row: 3/ 4;
 	text-align: center;
-	font-size: 1.2rem;
+	font-size: 0.9rem;
 }
 .footer-item.campus-name {
 	padding-left: 50px;
 	padding-top: 30px;
 	padding-bottom: 10px;
 	grid-row: 1 / 2;
-	font-size: 1.2rem;
+	font-size: 1rem;
+	color: lightgrey;
 }
 .footer-item.contact {
 	padding-left: 50px;
 	grid-row: 2 / 3;
+	font-size: 0.9rem;
 }
 
 @media (min-width: 1024px) {
@@ -210,14 +225,18 @@ body.before-load {
 	.main-message {
 		font-size: 4vw;
 	}
-	#scroll-section-1 h1 {
+	#scroll-section-1 h1,
+	#scroll-section-2 h1,
+	#scroll-section-3 h1 {
 		font-size: 5vw;
 	}
-	#scroll-section-1 h3 {
-		font-size: 3vw;
+	#scroll-section-1 h3,
+	#scroll-section-2 h3,
+	#scroll-section-3 h3 {
+		font-size: 2.5vw;
 	}
 	.description {
-		padding: 0 1.5rem 0 0;
+		padding: 0 1rem 0 0;
 		font-size: 1.5rem;
 	}
 	.description strong {
