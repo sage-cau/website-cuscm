@@ -141,6 +141,9 @@ body.before-load {
 	font-size: 1.4rem;
 	color: rgb(29, 29, 31);
 }
+.right-pointing-triangle::after {
+	content: "\25B6 \FE0E";
+  }
 .chapel-btn-container{
 	min-width: 250px;
 	padding: 1rem 3rem;
