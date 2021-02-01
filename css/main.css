@@ -111,12 +111,12 @@ body.before-load {
 	height: 100%;
 }
 
-.mobile-img, .bc-img {
+.mobile-img, .bc-img, .prayer-img {
 	display: block;
 	margin: 0 auto;
 	width: 650px;
 }
-.bc-img{
+.bc-img, .prayer-img {
 	padding-bottom: 60px;
 }
 #scroll-section-1 h3, 
