@@ -127,8 +127,6 @@ body.before-load {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-end;
-
-	/* align-content: stretch; */
 }
 .description {
 	max-width: 600px;
@@ -229,6 +227,7 @@ body.before-load {
 		flex-wrap: wrap;
 		justify-content: center;
 		padding: 0 2rem;
+		max-width:250px; /*크롬 외 브라우저들 버그 보완..*/
 	}
 	.chapel-btn{
 		padding: 18px 16px;
