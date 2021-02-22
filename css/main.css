@@ -40,8 +40,14 @@ body.before-load {
 	width: 100%;
 	height: var(--global-nav-height);
 	padding: 0 1rem;
-	background: rgb(130, 182, 130);
+	background: rgb(197, 216, 224);
 }
+
+/* .global-nav a{
+	color: white;
+} */
+
+
 .local-nav {
 	position: absolute;
 	top: calc(var(--global-nav-height) + 1px);
@@ -51,16 +57,18 @@ body.before-load {
 	height: var(--local-nav-height);
 	padding: 0 1rem;
 	border-bottom: 1px solid #ddd;
-}
-.local-nav-sticky .local-nav {
-	position: fixed;
-	top: 0;
+
 	background: rgba(255, 255, 255, 0.1);
 	/* for iPhone */
 	-webkit-backdrop-filter: saturate(180%) blur(15px);
 	-moz-backdrop-filter: saturate(180%) blur(15px);
 	-o-backdrop-filter: saturate(180%) blur(15px);
 	backdrop-filter: saturate(180%) blur(15px);
+}
+.local-nav-sticky .local-nav {
+	position: fixed;
+	top: 0;
+	
 }
 .global-nav-links,
 .local-nav-links {
@@ -74,7 +82,7 @@ body.before-load {
 	/* justify-content: space-between; */
 	justify-content: center;
 }
-.local-nav-links .club-name {
+.local-nav-links .home {
 	margin-right: auto;
 	font-size: 1.4rem;
 	font-weight: bold;
@@ -82,33 +90,62 @@ body.before-load {
 .local-nav-links a {
 	font-size: 0.8rem;
 }
-.local-nav-links a:not(.club-name) {
+.local-nav-links a:not(.home) {
 	margin-left: 2em;
 }
 .scroll-section {
 	position: relative;
-	padding: 10vh 0;
+	padding: 20vh 0 5vh;
 }
-
-/* 인터렉티브 적용 전 임시 padding */
 #scroll-section-0 {
-	padding-top: 40vw;
-	padding-bottom: 60vw;
+	padding-top: 53vh;
+	padding-bottom: 500vh;
 }
 
 #scroll-section-0 h1 {
 	position: relative;
-	top: 10vh;
+	top: -10vh;
 	z-index: 5;
 	font-size: 4rem;
 	text-align: center;
 	color: #fff;
+	opacity: 1;
 }
+
+.sticky-elem {
+	/* display: none; */
+	position: fixed;
+	left: 0;
+	width: 100%;
+}
+
 .sticky-elem-canvas {
-	position: absolute;
-	/* top: 0; */
-	top: calc(var(--global-nav-height) + var(--local-nav-height));
+	/* position: absolute; */
+	top: 0;
+	/* top: calc(var(--global-nav-height) + var(--local-nav-height)); */
 	height: 100%;
+}
+
+.sticky-elem-canvas canvas {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+.main-message {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 41vh;
+	margin: 5px 0;
+	height: 3em;
+	font-size: 1.8rem;
+	color: white;
+	/* opacity: 0; */
+}
+.main-message p {
+	font-weight: bold;
+	text-align: center;
+	line-height: 1.2;
 }
 
 .chapel-img, .bc-img, .prayer-img {
@@ -262,11 +299,15 @@ body.before-load {
 } */
 
 @media (min-width: 1024px) {
+	.local-nav-links a {
+		font-size: 1rem;
+	}
+
 	#scroll-section-0 h1 {
-		font-size: 9vw;
+		font-size: 7.5vw;
 	}
 	.main-message {
-		font-size: 4vw;
+		font-size: 3vw;
 	}
 	#scroll-section-1 h1,
 	#scroll-section-2 h1,
