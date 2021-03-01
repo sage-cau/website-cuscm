@@ -143,7 +143,10 @@ body.before-load {
 }
 #scroll-section-0 {
 	padding-top: 53vh;
-	/* padding-bottom: 20vh; */
+	padding-bottom: 50vh;
+}
+#scroll-section-1 {
+	padding-top: 0;
 }
 
 #scroll-section-0 h1 {

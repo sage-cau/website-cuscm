@@ -1,34 +1,45 @@
-import {setLayout} from './scroll-section-0.js'
+// main.js: 로컬 네비게이션 메뉴 상단에 고정, 로딩 끝났을 때 
 
 (() => {
-    let yOffset = 0;
+    let yOffset = window.pageYOffset;
 
     function checkMenu() {
 		if (yOffset > 44) {
 			document.body.classList.add('local-nav-sticky');
-		} else {
+		} 
+        else {
 			document.body.classList.remove('local-nav-sticky');
 		}
 	}
 
+    function scrollToChapel() {
+        // window.scrollTo(0, document.querySelector("#scroll-section-1").offsetTop);
+        let tempYOffset = yOffset;
+        if (tempYOffset < document.querySelector("#scroll-section-1").offsetTop) {
+            let siId = setInterval(() => {
+                scrollTo(0, tempYOffset);
+                tempYOffset += 100;
+
+                if (tempYOffset > document.querySelector("#scroll-section-1").offsetTop) {
+                    clearInterval(siId);
+                }
+            }, 20);
+        }
+    }
+
     window.addEventListener('scroll', () => {
-        yOffset = window.pageYOffset;
-        // scrollLoop();
         checkMenu();
-        setLayout();
-
-
-        //   if (!rafState) {
-        //       rafId = requestAnimationFrame(loop);
-        //       rafState = true;
-        //   }
     });
 
-    window.addEventListener('resize', () => {
-        setLayout();
+    window.addEventListener('load', () => {
+        document.body.classList.remove('before-load');
     });
 
     document.querySelector('.loading').addEventListener('transitionend', (e) => {
         document.body.removeChild(e.currentTarget);
     });
+
+    document.querySelector(".chapel-link").onclick = scrollToChapel;
+
+
 })();
