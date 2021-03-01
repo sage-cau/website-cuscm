@@ -10,12 +10,12 @@
 	<link rel="stylesheet" href="css/main.css">
 </head>
 
-<body>	
-	<!-- <div class="loading">
+<body class="before-load">	
+	<div class="loading">
 		<svg class="loading-circle">
 			<circle cx="50%" cy="50%" r="25"></circle>
 		</svg>
-	</div> -->
+	</div>
 
 	<div class="container">
 		<nav class="global-nav">
@@ -24,37 +24,41 @@
 				<a href="#" class="global-nav-item">연혁</a>
 				<a href="#" class="global-nav-item">이주의 포스터</a>
 				<a href="#" class="global-nav-item">카드뉴스 시리즈</a> -->
-				<a href="#" class="global-nav-item">위로 스크롤하면 더 자세한 내용을 보실 수 있어요!</a>
+				<a href="#" class="global-nav-item">자세한 내용을 보려면 위로 스크롤 하세요!</a>
 			</div>
 		</nav>
 		<nav class="local-nav">
 			<div class="local-nav-links">
-				<a href="#" class="club-name">CUSCM</a>
-				<!-- <a href="#">온라인 목요예배 소개</a> -->
-				<a href="https://www.instagram.com/cuscm_seoul/">인스타그램</a>
-				<a href="https://blog.naver.com/cuscmer">네이버 블로그</a>
+				<a href="index.html" class="home">CUSCM</a>
+				<a style="cursor:pointer" class="chapel-link">목요예배</a>
+				<a href="history.html">역사</a>
+				<a href="https://blog.naver.com/cuscmer">블로그</a>
+				<a href="https://www.instagram.com/cuscm_seoul/">인스타</a>
+				<a href="https://pf.kakao.com/_XrUEK">카카오톡</a>
 			</div>
 		</nav>
 
 
 		<section class="scroll-section" id="scroll-section-0">
 			<h1>CUSCM</h1>
-			<div class="sticky-elem sticky-elem-canvas">
-				<img class="image1" src="images/front-view.jpg" alt="front-view">
-				<!-- <canvas id="video-canvas-0" width="1920" height="1080"></canvas> -->
+			<div class="image-blend section-0-canvas">
+				<canvas id="image-blend-canvas" width="1920" height="1080"></canvas>
 			</div>
-			<!--<div class="sticky-elem main-message a">
-				<p>중앙대학교에서<br>1948년부터 이어져 온 동아리</p>
+			<div class="sticky-elem section-0-canvas">
+				<canvas id="canvas-0" width="1920" height="1920"></canvas>
+			</div>
+			<div class="sticky-elem main-message a">
+				<p>1948년부터 계속된<br>중앙대와 후배들을 위한 기도</p>
 			</div>
 			<div class="sticky-elem main-message b">
-				<p>70여년 동안 계속된<br>후배들과 캠퍼스를 위한 기도</p>
+				<p>찬양과 예배를 통해<br>삶이 회복되는 성령님의 역사</p>
 			</div>
 			<div class="sticky-elem main-message c">
-				<p>다양한 학과, 학번이<br>예수님의 이름으로 하나 되고</p>
+				<p>학과나 학번은 달라도<br>예수님의 사랑으로 하나된 공동체</p>
 			</div>
-			<div class="sticky-elem main-message d">
-				<p>하나님께 받은 사랑을<br>주위에 흘려보내는 공동체</p>
-			</div> -->
+			<div class="main-message d" style="color: black; top: -20vh">
+				<p>그 사랑을 모두가 보도록<br>"너희들은 가라 저 캠퍼스로!"</p>
+			</div>
 		</section>
 
 
@@ -99,12 +103,10 @@
 			<h1>Bible College</h1>
 			<div class="desc-container">
 				<p class="description">
-					목요예배는 하나님을 만나고 경험하는 시간이라면, Bible 
-					College(BC)는 하나님에 대해 더 알아가고 대화를 나누는 
+					우리는 하나님의 말씀에 영혼을 구원하는 능력이 있음을 믿습니다. Bible 
+					College (BC)는 하나님에 대해 더 알아가고 대화를 나누는 
 					시간입니다. 학년에 따라 다양한 반이 있으며, 중앙대
-					동문 목사님과 강사님께서 강의를 진행해주십니다. 졸업하는 
-					선배들이 대학생활 중 가장 그리운 순간으로 꼽는 시간이기도  
-					합니다.<br><br>
+					동문 목사님과 강사님께서 강의를 진행해주십니다. <br><br>
 					<strong>매주 화요일 6시, zoom으로 진행됩니다.</strong>
 				</p>
 				
@@ -114,13 +116,14 @@
 			<div>
 				<img class="prayer-img" src="images/zoom_prayer.png" alt="zoom_prayer">
 			</div>
-			<h3>하루의 시작을 하나님과 함께</h3>
+			<h3>어떤 일도 기도보다 앞서지 않게</h3>
 			<h1>아침 기도회</h1>
 			<div class="desc-container">
 				<p class="description">
 					매일 아침 말씀과 기도로 하루를 시작할 수 있는 시간
 					입니다. 묵상(10분)-설교(20분)-개인기도(자유)의 순서로 
-					진행되고, 설교는 생명의 삶(두란노) 본문으로 진행되고 있습니다.<br><br>
+					진행되고, 설교는 생명의 삶(두란노) 본문으로 진행되고 있습니다.
+					기도할 때 성령께서 능력으로 여러분과 함께하실 것입니다.<br><br>
 					<strong>월요일~금요일 오전 8시, zoom으로 진행됩니다.</strong>
 				</p>
 			</div>
@@ -165,6 +168,7 @@
 		</footer>
 	</div>
 
-	<script src="js/main.js"></script>
+	<script type="module" src="js/main.js"></script>
+	<script type="module" src="js/scroll-section-0.js"></script>
 </body>
 </html>
