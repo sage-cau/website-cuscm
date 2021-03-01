@@ -1,9 +1,11 @@
 // main.js: 로컬 네비게이션 메뉴 상단에 고정, 로딩 끝났을 때 
 
 (() => {
-    let yOffset = window.pageYOffset;
+    
 
     function checkMenu() {
+        let yOffset = window.pageYOffset;
+
 		if (yOffset > 44) {
 			document.body.classList.add('local-nav-sticky');
 		} 
@@ -12,7 +14,8 @@
 		}
 	}
 
-    function scrollToChapel() {
+    function scrollToChapelSection() {
+        let yOffset = window.pageYOffset;
         // window.scrollTo(0, document.querySelector("#scroll-section-1").offsetTop);
         let tempYOffset = yOffset;
         if (tempYOffset < document.querySelector("#scroll-section-1").offsetTop) {
@@ -39,7 +42,7 @@
         document.body.removeChild(e.currentTarget);
     });
 
-    document.querySelector(".chapel-link").onclick = scrollToChapel;
+    document.querySelector(".chapel-link").onclick = scrollToChapelSection;
 
 
 })();
