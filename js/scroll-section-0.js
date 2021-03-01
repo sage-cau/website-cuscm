@@ -13,13 +13,13 @@
     let blendCanvas = document.querySelector('#image-blend-canvas');
     let blendContext = blendCanvas.getContext('2d');
     let imgElem1 = new Image();
-    imgElem1.src = '/images/front-view-1920.jpg';
+    imgElem1.src = 'images/front-view-1920.jpg';
     let imgElem2 = new Image();
-    imgElem2.src = '/images/chapel-worship2-1920.jpg';
+    imgElem2.src = 'images/chapel-worship2-1920.jpg';
     let imgElem3 = new Image();
-    imgElem3.src = '/images/august-mt-1920-1080.jpg';
+    imgElem3.src = 'images/august-mt-1920-1080.jpg';
     let imgElem4 = new Image();
-    imgElem4.src = '/images/pond-view-1920-1080.jpg';
+    imgElem4.src = 'images/pond-view-1920-1080.jpg';
 
     let values = {
         messageA_opacity_in: [0, 1, { start: 0.005, end: 0.07 }],
