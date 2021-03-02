@@ -324,9 +324,11 @@ body.before-load {
 	height: 5rem;
 	color: white;
 	background: grey;
+
+	z-index: 20;
 }
 
-.footer small{
+.footer a{
 	color: lightgrey;
 	margin-top: 5px;
 }
