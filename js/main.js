@@ -23,8 +23,18 @@
                 scrollTo(0, tempYOffset);
                 tempYOffset += 100;
 
-                if (tempYOffset > document.querySelector("#scroll-section-1").offsetTop) {
+                if (tempYOffset > document.querySelector("#scroll-section-1").offsetTop + 80) {
                     clearInterval(siId);
+                }
+            }, 20);
+        }
+        else {
+            let siId2 = setInterval(() => {
+                scrollTo(0, tempYOffset);
+                tempYOffset -= 100;
+
+                if (tempYOffset < document.querySelector("#scroll-section-1").offsetTop - 80) {
+                    clearInterval(siId2);
                 }
             }, 20);
         }
