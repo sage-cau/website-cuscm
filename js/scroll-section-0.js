@@ -48,7 +48,7 @@
 
 
         imgElem4_opacity_in: [0, 1, { start: 0.63, end: 0.7 }],
-        messageD_opacity_in: [0, 1, { start: 0.5, end: 0.61 }],
+        messageD_opacity_in: [0, 1, { start: 0.72, end: 0.8 }],
         // messageD_translateY_in: [window.innerHeight * 0.5, window.innerHeight * 0.25, { start: 0.6, end: 0.7 }],
     };
 
@@ -62,6 +62,31 @@
             canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
         } else {
             canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${850/canvas.height})`;
+        }
+
+
+        const widthRatio = window.innerWidth / blendCanvas.width;
+        const heightRatio = window.outerHeight / blendCanvas.height;
+        // let canvasScaleRatio;
+
+        if (widthRatio <= heightRatio) {
+            // 캔버스보다 브라우저 창이 홀쭉한 경우
+            // canvasScaleRatio = heightRatio;
+            values.canvas_scale[0] = heightRatio;
+        } else {
+            // 캔버스보다 브라우저 창이 납작한 경우
+            //     canvasScaleRatio = widthRatio;
+            values.canvas_scale[0] = widthRatio;
+        }
+
+        if (window.innerWidth <= window.outerHeight) {
+            // 브라우저 창이 홀쭉한 경우
+            // canvasScaleRatio = heightRatio;
+            values.canvas_scale[1] = widthRatio * 4/5;
+        } else {
+            // 브라우저 창이 납작한 경우
+            //     canvasScaleRatio = widthRatio;
+            values.canvas_scale[1] = heightRatio * 3/5;
         }
     }
 
@@ -142,12 +167,11 @@
 
 
         // // main-message d 등장하는 애니메이션
-        // if (currentYOffset / scrollHeight <= values.messageD_opacity_in[2].end + 0.4) {
-        //     // in
-        //     objs.messageD.style.opacity = calcValues(values.messageD_opacity_in, currentYOffset);
-        //     // objs.messageD.style.transform = `translate3d(0, ${calcValues(values.messageD_translateY_in, currentYOffset)}%, 0)`;
-        // } 
-
+        if (currentYOffset / scrollHeight <= values.messageD_opacity_in[2].end + 0.4) {
+            // in
+            objs.messageD.style.opacity = calcValues(values.messageD_opacity_in, currentYOffset);
+            // objs.messageD.style.transform = `translate3d(0, ${calcValues(values.messageD_translateY_in, currentYOffset)}%, 0)`;
+        }
     }
     
 
@@ -202,22 +226,7 @@
             // objs.messageD.classList.add('sticky-elem');
             blendCanvas.style.opacity = 1;
 
-            const widthRatio = window.innerWidth / blendCanvas.width;
-            const heightRatio = window.outerHeight / blendCanvas.height;
-            // let canvasScaleRatio;
-
-            if (widthRatio <= heightRatio) {
-                // 캔버스보다 브라우저 창이 홀쭉한 경우
-                // canvasScaleRatio = heightRatio;
-                values.canvas_scale[0] = heightRatio;
-                values.canvas_scale[1] = widthRatio * 4/5;
-            } else {
-                // 캔버스보다 브라우저 창이 납작한 경우
-                //     canvasScaleRatio = widthRatio;
-                values.canvas_scale[0] = widthRatio;
-                values.canvas_scale[1] = heightRatio * 1/2;
-            }
-
+            
             // 그림 축소 애니메이션
             blendCanvas.style.transform = `translate3d(-50%, -50%, 0) scale(${calcValues(values.canvas_scale, currentYOffset)})`;
             // blendCanvas.style.marginTop = 0;
@@ -233,6 +242,14 @@
             else {
                 blendCanvas.style.marginTop = 0;
             }
+        }
+
+        // 1~2번째 그림의 캔버스 뒷부분에서는 숨기기 (footer의 a태그 안되는 문제 해결)
+        if (currentYOffset / scrollHeight > values.imgElem2_opacity_out[2].end) {
+            canvas.parentElement.style.display = "none";
+        }
+        else {
+            canvas.parentElement.style.display = "block";
         }
     }
 
