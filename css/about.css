@@ -112,10 +112,17 @@ iframe {
 }
 
 .insta-container {
-  padding-bottom: 35rem; 
-  margin: 0 auto;
-  transform: translateX(-1.25rem) scale(0.9);
+  max-width: 500px;
+  padding-bottom: 35rem;
+  -webkit-transform: scale(0.88);
+  -moz-transform: scale(0.88);
+  -ms-transform: scale(0.88);
+  transform: scale(0.88);
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  transform-origin: left center; 
 }
+
 
 .slidewrap {
   max-width: 400px;
@@ -175,24 +182,25 @@ iframe {
   background: rgb(14, 90, 21);
 }
 
-dl {
+.contents dl {
   display: grid;
   grid-template-columns: 80px 1fr;
   row-gap: 20px;
 }
-dt {
+.contents dt {
   font-weight: bold;
   font-size: 1.2rem;
   padding-top: 0.2rem;
 }
 
-dd,
-p {
+.contents dd,
+.contents p {
   font-size: 1rem;
   line-height: 1.6;
 }
 
-@media (min-width: 1024px) {
+
+@media (min-width: 750px) {
   .tab-container {
     height: 11rem;
     padding-top: 5.5rem;
@@ -202,8 +210,15 @@ p {
     margin: 0 2rem;
   }
   .insta-container {
-    max-width: 500px; 
-    padding-bottom: 40rem; 
+    padding-bottom: 40rem;
+    margin: 0 auto;
+    -webkit-transform: scale(0.88);
+    -moz-transform: scale(0.88);
+    -ms-transform: scale(0.88);
+    transform: scale(0.88);
+    -webkit-transform-origin: center center;
+    -moz-transform-origin: center center;
+    transform-origin: center center; 
   }
 
   .slide-control button {
@@ -216,13 +231,14 @@ p {
     right: -80px;
   }
 
-  dl {
+  .contents dl {
     grid-template-columns: 100px 1fr;
   }
-  dt {
+  .contents dt {
     font-size: 1.3rem;
   }
-  dd, p {
+  .contents dd, 
+  .contents p {
     font-size: 1.3rem;
   }
 }
