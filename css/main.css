@@ -275,7 +275,7 @@ body.before-load {
 	max-width: 600px;
 	margin: 0 auto;
 	padding: 0 3.5rem;
-	font-size: 0.5rem;
+	font-size: 0.8rem;
 	color: #888;
 }
 #scroll-section-4 p {
@@ -283,43 +283,41 @@ body.before-load {
 	margin: 0 auto;
 	font-size: 0.9rem;
 }
-.sns-iphone-img{
-	height: 50vh;
-	margin: 50px;
+#scroll-section-4 .desc-container{
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
 }
-.sns-container{
-	display: grid;
-	grid-template-columns: repeat(2, minmax(150px,auto));
-	grid-template-rows: repeat(3, auto);
-	grid-auto-flow: column; /*아이템들을 세로방향 우선 배치*/
-	
+.sns-iphone-img{
+	margin: 4rem 0 4rem 1rem;
 	height: 40vh;
-	min-height: 180px;
+	/* width: 150px; */
+}
+.sns-container {
+	display: flex;
+	flex-direction: column;
+	margin-top: 30px;
 }
 
 .sns-container .logo{
-	height: 50px;
-	margin: auto auto;
-}
-.sns-container h4{
-	transform: translateY(-1.2vh);
-	margin: auto;
-}
-.sns-container:nth-child(3){
-	margin-bottom: 10px;
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+	padding: 1rem 0;
+	height: 30px;
 }
 .sns-links{
-	margin: 0 auto;
+	margin: 0 1em;
+	padding-bottom: 1em;
 }
 .sns-links a{
 	color: rgb(41, 135, 243);
-	text-decoration: underline;
 }
 
 footer {
-	height: 15rem;
+	height: 14rem;
 	color: lightgrey;
-	background: grey;
+	background: rgb(75, 75, 75);
 	padding: 1rem 0;
 	display: flex;
 	justify-content: space-around;
@@ -327,25 +325,32 @@ footer {
 	flex-wrap: wrap;
 	z-index: 20;
 }
+footer > * {
+	margin: 0 1rem;
+}
 footer .title {
 	color: white;
 	padding-bottom: 5px;
 }
 footer .contact {
-	min-width: 200px;
+	min-width: 100px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
+footer .contact .title {
+	margin: 0 1rem;
+}
 footer .contact img {
 	width: 30px;
-	margin: 15px;
+	margin: 5px;
 }
 footer .copyright{
+	font-size: 0.8rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;	
+	align-items: center;
 }
 footer .copyright a{
 	color: lightgrey;
@@ -353,7 +358,7 @@ footer .copyright a{
 }
 
 
-@media (min-width: 1024px) {
+@media (min-width: 750px) {
 	.local-nav-links a {
 		font-size: 1rem;
 	}
@@ -398,21 +403,23 @@ footer .copyright a{
 	.chapel-notice{
 		max-width: 800px;
 		padding: 20px 0 0;
-		font-size: 0.9rem;
+		font-size: 0.9em;
 	}
 
 	#scroll-section-4 p {
 		font-size: 1.2rem;
 	}
-	.sns-container{
-		grid-template-columns: auto;
-		grid-template-rows: repeat(6,auto);
+
+	.sns-iphone-img {
+		margin: 50px;
 		height: 50vh;
-		min-height: 300px;
-		margin-top: 50px;
+	}
+	.sns-container .logo{
+		padding: 30px 0;
+		height: 50px;
 	}
 
 	footer {
-		height: 9rem;
+		height: 9em;
 	}
 }
