@@ -8,11 +8,29 @@
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/default.css">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/popup.css">
 
 	<meta name="naver-site-verification" content="b255594c202400638d526085587aa0544c65157b" />
 </head>
 
-<body class="before-load">	
+<body class="before-load">
+	<div class="popup">
+		<div class="popup-bg"></div>
+		<img class="close-btn" onclick="" src="images/close-button-transparent-png-pictures-645889.png">
+		<div class="popup-content">
+			<img class="popup-img" alt="">
+			<div class="link-btn-container">
+				<button>
+					<img src="images/Zoom-icon.png" alt="">
+					<a style="color:#FFF;">ZOOM</a> <!--href는 html 크롤링 보안 상 js에 넣음 -->
+				</button>
+				<button>
+					<img src="images/youtube-icon.png" alt="">
+					<a style="color:#FFF;">유튜브</a>
+				</button>
+			</div>
+		</div>
+	</div>	
 	<div class="loading">
 		<svg class="loading-circle">
 			<circle cx="50%" cy="50%" r="25"></circle>
@@ -180,6 +198,7 @@
 
 	<script type="module" src="js/main.js"></script>
 	<script type="module" src="js/scroll-section-0.js"></script>
+	<script type="module" src="js/popup.js"></script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-9TF4C7GC9C"></script>
