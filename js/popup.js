@@ -24,7 +24,6 @@
     let today = new Date();
     let start_day = new Date('2021-05-21T00:00:00');
     let end_day = new Date('2021-05-22T23:59:59');
-    alert(start_day)
     if(+today >= +start_day && +today <= +end_day) {
         links[0].href = "https://us02web.zoom.us/j/7990705699?pwd=TVZpTVRJUTBNdklEczMrUXMzeUZlUT09";
         links[1].href = "https://www.youtube.com/channel/UCW5f_GaYz2-VFkSBOFfL6Sg/videos";
